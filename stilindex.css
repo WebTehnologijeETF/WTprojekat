@@ -1,0 +1,150 @@
+body {
+    background-image: url(slika2.jpg);
+    margin-left: 40px;
+    margin-right: 40px;
+}
+title {
+    color: #f00;
+}
+
+#naslov {
+    width: 100%;
+    border: 2px solid;
+    border-radius: 15px;
+    background-image: url(slika1.jpg);
+
+}
+#naslov h1{
+    font-size: 60px;
+    color:#5e441f;
+    text-align: center;
+    margin: auto;
+}
+#naslov h4{
+    font-size: 30px;
+    color:#5e441f;
+    text-align: right;
+    margin-bottom: initial;
+}
+#glavnimeni
+{
+    border: 3px solid;
+    border-radius: 15px;
+}
+
+#naslov img{
+    float: left;
+    height: 142px;
+    width: 300px;
+}
+
+#meni ul{
+    margin-left: 300px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: auto;
+}
+#meni li{
+    width: 15%;
+    text-align: center;
+    display: inline;
+    color:#5e441f;
+    border: 1px solid;
+    border-radius: 10px;
+    background-image: url(slika1.jpg);
+    font-size: 30px;
+}
+
+#meni p{
+    font-size: 15px;
+    text-align: left;
+    color: #000;
+}
+#novost #pisao{
+    text-align: right;
+}
+#partneri{
+    border: 2px solid red;
+    float: left;
+    height: 900px;
+    width: 200px;
+    background-color: #000;
+    border-left-color: #000;
+    border-left:initial;
+}
+#novosti{
+    border: 2px solid;
+    height: 900px;
+    width: 600px;
+    float: left;
+    background-color: #000;
+}
+#novost{
+    width: 558px;
+    height: 30px;
+}
+#partneri h4{
+    margin: auto;
+    color: blue;
+    font-size: 20px;
+}
+#novosti h4{
+    margin: auto;
+    color: blue;
+    font-size: 20px;
+}
+#novosti h3{
+    margin: auto;
+    color:#5e441f;
+    font-size: 20px;
+}
+#fotogalerija h4{
+    margin: auto;
+    color: blue;
+    font-size: 20px;
+}
+#partner img{
+     height: 90px;
+     width: 195px;
+}
+#novost{
+    border: 2px solid red;
+    height: 195px;
+    width: 595px;
+    background-image: url(slika2.jpg);
+}
+#fotogalerija {
+    border: 2px solid;
+    height: 900px;
+    width: 447px;
+    float: left;
+    background-color: #000;
+}
+#galerija h3{
+    float: left;
+    color: #4cff00;
+    margin: auto;
+}
+#galerija{
+    border:  2px solid red;
+    height: 150px;
+}
+#fotogalerija img{
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+a:link{
+    color: #000;
+}
+a:visited{
+    color: #5e441f
+}
+a:hover{
+    color: #000;
+}
+a:active{
+    color: #000;
+}

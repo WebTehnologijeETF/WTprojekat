@@ -105,6 +105,25 @@ body{
     width:  609px;
     height: 400px;
 }
+
+#ponuda{
+    margin-left: 20px;
+    margin-top: 30px;
+    height: 150px;
+    width: 270px;
+    border: 2px solid black;
+    float: left;
+    background-color: #343030;
+}
+#ponuda img{
+    float: left;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+}
+
 #desno{
     border: 2px solid black;
     height: 694px;
@@ -114,7 +133,7 @@ body{
     float: left;
 }
 
-a:link    {color: #fdfdfc; background-color:transparent; text-decoration:none}
+a:link    {color: #000; background-color:transparent; text-decoration:none}
 a:visited {color: #fdfdfc; background-color:transparent; text-decoration:none}
-a:hover   {color: #fdfdfc; background-color:transparent; text-decoration:underline}
+a:hover   {color: #000; background-color:transparent; text-decoration:underline}
 a:active  {color: #fdfdfc; background-color:transparent; text-decoration:underline}

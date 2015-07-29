@@ -3,6 +3,7 @@ body{
 }
 
 #stranica{
+    position: absolute;
     margin: 150px;
     margin-top: 0px;
     border: 2px solid black;
@@ -186,10 +187,33 @@ body{
 #por{
     float: left;
 }
+  
+.slikaGreske {
+    width: 10px;
+    height: 10px;
+    margin-left: 0px;
+    text-align: left;
+    visibility: hidden; 
+}
+#greskaImena {
+    font-size: small;
+    text-align: left;
+    visibility: hidden;
+}
+#greskaMaila {
+    font-size: small;
+    text-align: left;
+    visibility: hidden;
+}
+#greskaJMBG {
+    font-size: small;
+    text-align: left;
+    visibility: hidden;
+}
 .poruka{
     float: left;
-    height: 400px;
-    width: 350px;
+    height: 200px;
+    width: 200px;
 }
 #posalji{
     text-align: right;
@@ -199,6 +223,7 @@ body{
     width: 500px;
     margin-top: 30px;
     margin-left: 56px;
+    background-image: url(slika2.jpg);
 }
 
 a:link    {color: #000; background-color:transparent; text-decoration:none}

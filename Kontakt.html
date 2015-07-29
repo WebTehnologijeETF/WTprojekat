@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="stilindex.css">
     </head>
     <body>
+        <script src="validacijaKontaktForme.js"></script>
         <div id="stranica">
             <div id="zaglavlje">
                 <a href="index.html"><img src="logo1.jpg" alt="logo"></a>
@@ -33,15 +34,26 @@
                     <a href="http://www.klix.ba/"> <img src="klix.jpg" alt="klix"> </a>
                 </div>
                 <div id="sredina">
-                    <form action="" name="kontakt">
+                    <form name="kontakt">
                         <table id="kontaktforma">
                             <tr>
                                 <td>Ime i prezime:</td>
-                                <td><input name="Ime"></td>
+                                <td><input id="ime" name="Ime"></td>
+                                 <td> <input class="slikaGreske" id="greska" type="image" src="greska.png" alt="greska"></td>
+                                <td id="greskaImena">Morate unijeti ime!</td>
+                               
                             </tr>
                             <tr>
                                 <td>E mail:</td>
-                                <td><input name="email"></td>
+                                <td><input id="email" name="eMail"></td>
+                                <td> <input class="slikaGreske"  id="grMail" type="image" src="greska.png" alt="greska"></td>
+                                <td id="greskaMaila">Morate unijeti validan e-mail!</td>
+                            </tr>
+                            <tr>
+                                <td>Maticni broj:</td>
+                                <td><input id="maticni" name="maticni broj"></td>
+                                 <td> <input class="slikaGreske"  id="grMaticni" type="image" src="greska.png" alt="greska"></td>
+                                <td id="greskaJMBG">Mora biti tacno 13 cifri!</td>
                             </tr>
                             <tr>
                                 <td>Naslov:</td>
@@ -49,12 +61,12 @@
                             </tr>
                             <tr>
                                 <td id="por">Poruka:</td>
-                                <td><input class="poruka" name="poruka"></td>
+                                <td><input id="por" class="poruka" name="poruka"></td>
                             </tr>
                             <tr>
                                 <td> </td>
                                 <td id="posalji">
-                                    <input type="submit" value="Posalji">
+                                    <button type="button" onclick="validImena()">Posalji</button>
                                 </td>
                             </tr>
                         </table>

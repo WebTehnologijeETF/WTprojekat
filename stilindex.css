@@ -6,22 +6,24 @@ body{
     position: absolute;
     margin: 150px;
     margin-top: 0px;
-    border: 2px solid black;
-    height: 900px;
+    height: max-content;
     background-color: #343030;
+    border: 2px solid black;
 }
-
+#padajuciMeni {
+    position: absolute;
+}
 #zaglavlje{
-    border-bottom: 2px solid black;
     height: 150px;
     width: 1030px;
     background-image: url(slika2.jpg);
 }
 
 #zaglavlje img{
-    height: 200px;
+    height: 199px;
     width: 300px;
     float: left;
+    border-right: 2px solid black;
 }
 
 #zaglavlje h1{
@@ -41,7 +43,9 @@ body{
     height: 47px;
     width: 1026px;
     border: 2px solid black;
+    border-right: 0px;
 }
+
 
 #meni ul{
     text-align: left;
@@ -49,9 +53,15 @@ body{
     height: 28px;
 }
 
+#strelica {
+    width: 15px;
+    height: 15px;
+    padding: 0px;
+    margin-top: -10px;
+}
 #meni li{
     color: white;
-    background-color: #343030;
+    background-color: #f57d24;
     display: inline;
     padding: 14px;
     font-size: 16px;
@@ -59,18 +69,18 @@ body{
 }
 
 #sadrzaj{
-    background-color: red;
-    width: 1026px;
+    border-top: 2px solid black;
+    background-color:#808080;
+    width: 1030px;
     height: 696px;
-    border: 2px solid black;
+
 }
 
 #lijevo{
     float: left;
-    border: 2px solid black;
     background-image: url(slika2.jpg);
     height: 694px;
-    width: 200px;
+    width: 214px;
 }
 
 #lijevo h3{
@@ -82,13 +92,13 @@ body{
     margin-left: 35px;
     width: 120px;
     height: 60px;
-    border: 2px solid black;
+ 
     margin-top: 10px;
 }
 
 
 #sredina{
-    border: 2px solid black;
+
     height: 694px;
     width:  607px;
     background-color: #808080;
@@ -99,14 +109,13 @@ body{
     text-align: center;
 }
 #kalup{
-    border: 2px solid red;
+  
     height: 200px;
     width:  609px;
     background-image: url(slika1.jpg);
     float: left;
 }
-#galerija img{
-    border: 2px solid red;
+#galerija img{   
     width:  609px;
     height: 400px;
 }
@@ -116,7 +125,6 @@ body{
     margin-top: 30px;
     height: 110px;
     width: 270px;
-    border: 2px solid black;
     float: left;
     background-color: #c7caca;
 }
@@ -124,7 +132,6 @@ body{
     float: left;
     height: 110px;
     width: 100px;
-    border: 2px solid black;
     border-top: 0px;
     border-left: 0px;
 }
@@ -134,7 +141,7 @@ body{
     color: red;
 }
 #desno{
-    border: 2px solid black;
+    
     height: 694px;
     width: 207px;
     background-image:url(slika2.jpg);
@@ -172,7 +179,7 @@ body{
     margin-top: 30px;
     width: 250px;
     height: 250px;
-    border: 2px solid black;
+ 
     float: left;
 }
 .slika p{

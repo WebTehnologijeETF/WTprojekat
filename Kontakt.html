@@ -54,7 +54,17 @@
                                 <td>Maticni broj:</td>
                                 <td><input id="maticni" name="maticni broj"></td>
                                  <td> <input class="slikaGreske"  id="grMaticni" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaJMBG">Mora biti tacno 13 cifri!</td>
+                                <td id="greskaJMBG">Maticni broj nije validan!</td>
+                            </tr>
+                             <tr>
+                                <td>Mjesto</td>
+                                <td><input id="mjesto" name="mjesto"></td>
+                            </tr>
+                             <tr>
+                                <td>Opcina</td>
+                                <td><input id="opcina" name="opcina"></td>
+                                 <td> <input class="slikaGreske"  id="grOpcina" type="image" src="greska.png" alt="greska"></td>
+                                <td id="greskaOpcina">Opcina ili mjesto ne postoji ili mjesto nije u navedenoj opcini!</td>
                             </tr>
                             <tr>
                                 <td>Naslov:</td>
@@ -67,7 +77,7 @@
                             <tr>
                                 <td> </td>
                                 <td id="posalji">
-                                    <button type="button" onclick="validImena()">Posalji</button>
+                                    <button type="button" onclick="validForme()">Posalji</button>
                                 </td>
                             </tr>
                         </table>

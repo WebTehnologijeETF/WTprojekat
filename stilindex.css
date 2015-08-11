@@ -16,6 +16,7 @@ body{
 #greskaOpcina {
     visibility: hidden;
 }
+.error {color: #FF0000;}
 #greskaMjesto {
     visibility: hidden;
 }

@@ -22,7 +22,7 @@
                     <li> <a href="#" onclick="return Otvori('Parket.html')"> Parketi </a> </li>
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
                     <li> <a href="#" onclick="return Otvori('Fotogalerija.html')"> Fotogalerija </a> </li>
-                    <li> <a href="Kontakt.html"> Kontakt </a> </li>
+                    <li> <a href="Kontakt.php"> Kontakt </a> </li>
                 </ul>
             </div>
             <div id="sadrzaj">
@@ -37,63 +37,13 @@
                 </div>
                 <div id="sredina">
                     <?php
-                        $imeErr = $emailErr = $maticniErr = "";
-                        $ime = $email = $naslov = $maticni = $poruka = "";
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                           if (empty($_POST["ime"])) {
-                             $imeErr = "Unesite ime!";
-                           } else {
-                             $ime = test_input($_POST["ime"]);
-                             if (!preg_match("/^[a-zA-Z ]*$/",$ime)) {
-                               $imeErr = "Ime smije da sadrzi samo slova i razmake!"; 
-                             }
-                        }
-                       if (empty($_POST["email"])) {
-                         $emailErr = "Unesite email!";
-                       } else {
-                         $ime = test_input($_POST["ime"]);
-                         $email = test_input($_POST["email"]);
-                         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                           $emailErr = "Neispravan email format!"; 
-                         }
-                         else {
-                             $a = strpos($email, "@");
-                             $b = substr($email, 0, $a-1);
-                             if(strpos($ime, $b)!= TRUE);
-                             $emailErr = "Ime mora biti sadrzano u emailu!";
-                         }
-                       }
-     
-                       if (empty($_POST["maticni"])) {
-                         $maticniErr = "Unesite maticni broj!";
-                       } else {
-                         $maticni = test_input($_POST["maticni"]);
-                         if (!preg_match("/^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])[0-9]{9}$/",$maticni)) {
-                           $maticniErr = "Maticni nije validan!"; 
-                         }
-                       }
-
-                       if (empty($_POST["naslov"])) {
-                         $naslov = "";
-                       } else {
-                         $naslov = test_input($_POST["naslov"]);
-                       }
-
-                       if (empty($_POST["poruka"])) {
-                          $poruka = "";
-                          } else {
-                          $poruka = test_input($_POST["poruka"]);
-                          }
-                       }
-
-                    function test_input($data) {
-                       $data = trim($data);
-                       $data = stripslashes($data);
-                       $data = htmlspecialchars($data);
-                       return $data;
-                    }
+                      include 'Validacija.php';
                     ?>
-
+                  
+                   <?php 
+                      include 'potvrda.php'
+                   ?>
+                   
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <table id="kontaktforma">
                             <tr>
@@ -112,14 +62,13 @@
                                 <td><span class="error">* <?php echo $maticniErr;?></span></td>             
                             </tr>
                              <tr>
-                                <td>Mjesto</td>
-                                <td><input id="mjesto" name="mjesto"></td>
+                                <td>Mjesto:</td>
+                                 <td><input type="text" id="mjesto" name="mjesto" value="<?php echo $mjesto;?>"></td>
                             </tr>
                              <tr>
-                                <td>Opcina</td>
-                                <td><input id="opcina" name="opcina"></td>
-                                <td> <input class="slikaGreske"  id="grOpcina" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaOpcina">Opcina ili mjesto ne postoji ili mjesto nije u navedenoj opcini!</td>
+                                <td>Opcina:</td>
+                                 <td><input type="text" id="opcina" name="opcina" value="<?php echo $opcina;?>"></td>
+                                
                             </tr>
                             <tr>
                                 <td>Naslov:</td>
@@ -132,7 +81,9 @@
                             <tr>
                                 <td> </td>
                                 <td id="posalji">
-                                    <input type="submit" name="submit" value="Potvrdi" onclick="provjeraMjestaIOpcine()">
+                                    <input type="reset" name="reset" value="Ponisti">
+                                    <input type="submit" name="submit" value="Posalji" onclick="provjeraMjestaIOpcine()">
+                                    
                                 </td>
                             </tr>
                         </table>

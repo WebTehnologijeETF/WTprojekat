@@ -239,6 +239,28 @@ body{
     margin-left: 56px;
     background-image: url(slika2.jpg);
 }
+#podnaslov {
+    color: red;
+}
+#siguran {
+    margin-left: 400px;
+}
+#potvrda {
+    background-color: #f57d24;
+    margin-left: 56px;
+    margin-top: 20px;
+    border: 2px solid black;
+    width: 500px;
+    height: 400px;
+}
+#potvrda h {
+    margin: auto;
+    color: blue;
+    font-size: large;
+}
+#potvrda tr,td {
+    margin: 0px;
+}
 
 a:link    {color: #000; background-color:transparent; text-decoration:none}
 a:visited {color: #fdfdfc; background-color:transparent; text-decoration:none}

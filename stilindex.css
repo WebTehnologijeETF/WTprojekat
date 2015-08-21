@@ -13,6 +13,37 @@ body{
 #padajuciMeni {
     position: absolute;
 }
+#naslov {
+    font-size: large;
+    color: blue;
+}
+
+.novost {
+    margin-top: 20px;
+    height: 300px;
+    width: 605px;
+    border: 2px solid black;
+    background-image: url(slika1.jpg);
+    border-left: 0px;
+    border-right: 0px;
+}
+.novost a{
+    float: right;
+    margin-right: 10px;
+}
+.novost p,h{
+    
+    margin-left: 4px;
+  
+}
+.novost img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
 #greskaOpcina {
     visibility: hidden;
 }
@@ -79,15 +110,17 @@ body{
     border-top: 2px solid black;
     background-color:#808080;
     width: 1030px;
-    height: 696px;
+    height: max-content;
 
 }
 
 #lijevo{
     float: left;
     background-image: url(slika2.jpg);
-    height: 694px;
+    height: 1100px;
     width: 214px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 #lijevo h3{
@@ -106,9 +139,9 @@ body{
 
 #sredina{
 
-    height: 694px;
-    width:  607px;
-    background-color: #808080;
+    height: max-content;
+    width:  603px;
+    background-color: #df9595;
     float: left;
 }
 #sredina h3{
@@ -118,10 +151,12 @@ body{
 #kalup{
   
     height: 200px;
-    width:  609px;
+    width:  605px;
     background-image: url(slika1.jpg);
     float: left;
+    border-bottom: 2px solid black;
 }
+
 #galerija img{   
     width:  609px;
     height: 400px;
@@ -148,12 +183,13 @@ body{
     color: red;
 }
 #desno{
-    
-    height: 694px;
+    border-left: 2px solid black;
+    height: 1100px;
     width: 207px;
     background-image:url(slika2.jpg);
     margin: auto;
     float: left;
+    border-bottom: 2px solid black;
 }
 #desno h3{
     text-align: center;

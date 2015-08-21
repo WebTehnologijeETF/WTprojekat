@@ -1,12 +1,12 @@
 
             <div id="zaglavlje">
-                <a href="#" onclick="return Otvori('index.html')"><img src="logo2.jpg" alt="logo"></a>
+                <a href="#" onclick="return Otvori('index.php')"><img src="logo2.jpg" alt="logo"></a>
                 <h1>d.o.o. "Dekoram"</h1>
                 <p>-Prodaja i ugradnja laminata i parketa-</p>   
             </div>
             <div id="meni">
                 <ul>
-                    <li> <a href="#" onclick="return Otvori('Pocetna.html')"> O nama </a> </li>
+                    <li> <a href="#" onclick="return Otvori('Pocetna.php')"> Pocetna </a> </li>
                     <li  onclick ="prikaziMeni()"   id="tipka"> Laminati <img id="strelica" src="strelica.jpg" alt="strelica"> <div id="padajuciMeni"> </div> </li>
                     <li> <a href="#" onclick="return Otvori('Parket.html')"> Parketi </a> </li>
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
@@ -24,22 +24,8 @@
                     <a href="http://www.bug.ba/"> <img src="bug.jpg" alt="bug"> </a>
                     <a href="http://www.klix.ba/"> <img src="klix.jpg" alt="klix"> </a>
                 </div>
-                <div id="sredina">
-                     <div id="galerija">
-                        <img src="dekoram.jpg" alt="dekoram">
-                    </div>
-                    <div id="kalup">
-                        <h3>O nama</h3>
-                        <p>D.o.o "Dekoram" je firma koja se bavi uvozom, prodajom, dostavom i ugradnjom<br>
-                           najmodernijih Evropskih laminata i parketa.<br>
-                           Nalazimo se na adresi: Causlije bb, 70230, Bugojno.<br>
-                           Kontakt: <br>
-                           Tel/fax: 030/252-085 <br>
-                           Ado:     061/162-019 <br>
-                           Amir:    061/848-097 <br>
-                           Facebook: <a href="https://www.facebook.com/dekoram.laminati?fref=ts">"Dekoram laminati"</a>
-                        </p>
-                    </div>
+                <div id="sredina">             
+                    <?php include 'novosti.php'; ?>
                 </div>
                 <div id="desno">
                     <h3>Zanimljivo:</h3>

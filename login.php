@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST["btnLogin"])) {
-        $veza = new PDO("mysql:dbname=dekordb;host=127.6.44.2;charset=utf8", "adminiXNWnnq", "t5Izi-S7gLII");
+        $veza = new PDO("mysql:dbname=dekordb;host=localhost;charset=utf8", "dekor", "1DvaTri!");
         $veza->exec("set names utf8");   
         $user = $_POST['user'];
         $pass = $_POST['pass'];
@@ -22,6 +22,7 @@
         else{          
             session_start();            
             $_SESSION['username'] = $rezultat['username'];
+            $_SESSION['id'] = $rezultat['id'];
             $_SESSION['mail'] = $rezultat['mail'];
             $_SESSION['tip'] = $rezultat['tip'];  
             $_SESSION['korisnikid'] = $rezultat['id'];

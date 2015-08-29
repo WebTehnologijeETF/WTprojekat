@@ -17,23 +17,23 @@
     <body>
         <script src="padajuciMeni.js"></script>
         <script src="singlePage.js"></script>
-           <?php
-                
-                if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
-                print "<a href='adminpanel.php'>Admin panel</a>";
-                }
-            ?>
+        <?php
+            
+            if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+            print "<a href='adminpanel.php'>Admin panel</a>";
+            }
+        ?>
         <div class="prijava">
-         <?php
-                        
-                          if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
-                          print "<a href='index.php?sta=odjava'>Odjava</a> ";                          
-                          }
-                        else { print "<a href='login.php'>Prijava</a>"; }
-                    ?>
+            <?php
+                
+                  if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+                  print "<a href='index.php?sta=odjava'>Odjava</a> ";                          
+                  }
+                else { print "<a href='login.php'>Prijava</a>"; }
+            ?>
         </div>
         <div id="stranica">
-         
+
 
             <div id="zaglavlje">
                 <a href="#" onclick="return Otvori('Pocetna.php')"><img src="logo2.jpg" alt="logo"></a>
@@ -49,7 +49,7 @@
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
                     <li> <a href="#" onclick="return Otvori('Fotogalerija.html')"> Fotogalerija </a> </li>
                     <li> <a href="Kontakt.php"> Kontakt </a> </li>
-                   
+
                 </ul>
             </div>
             <div id="sadrzaj">
@@ -61,9 +61,24 @@
                     <a href="http://www.kaindl.com/en/"> <img src="kaindl.jpg" alt="kaindl"> </a>
                     <a href="http://www.bug.ba/"> <img src="bug.jpg" alt="bug"> </a>
                     <a href="http://www.klix.ba/"> <img src="klix.jpg" alt="klix"> </a>
-                </div>
-                <div id="sredina">
+                </div>                
 
+                <div id="sredina">
+                    <div id="objavaNovost">
+                        <h3>Objavi novost</h3>
+                        <table>
+                            <tr>
+                                <td><p>Naslov:</p></td>
+                                <td><input name="naslov"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Slika:</p></td>
+                                <td><input name="slika"></td>
+                            </tr>
+                        </table>
+                        <p>Tekst</p> <textarea name="tekst"></textarea>
+                        <input type="button" name="btnObjaviNovost" onclick="return dodajNovost('<?php print $_SESSION['username'] ?>')" value="Objavi">
+                    </div>
                     <?php include 'novosti.php'; ?>
                 </div>
                 <div id="desno">

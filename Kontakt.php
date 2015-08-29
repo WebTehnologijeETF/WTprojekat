@@ -9,21 +9,6 @@
         <script src="validacijaKontaktForme.js"></script>
         <script src="padajuciMeni.js"></script>
         <script src="singlePage.js"></script>
-          <?php
-                
-                if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
-                print "<a href='adminpanel.php'>Admin panel</a>";
-                }
-            ?>
-        <div class="prijava">
-         <?php
-                        
-                          if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
-                          print "<a href='index.php?sta=odjava'>Odjava</a> ";                          
-                          }
-                        else { print "<a href='login.php'>Prijava</a>"; }
-                    ?>
-        </div>
         <div id="stranica">
             <div id="zaglavlje">
                 <a href="#" onclick="return Otvori('index.php')"><img src="logo2.jpg" alt="logo"></a>

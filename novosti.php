@@ -1,7 +1,7 @@
 <?php    
     session_start();    
 
-    $veza = new PDO("mysql:dbname=dekordb;host=localhost;charset=utf8","dekor", "1DvaTri!");    
+    $veza = new PDO("mysql:dbname=dekordb;host=127.6.44.2;charset=utf8", "adminiXNWnnq", "t5Izi-S7gLII");   
     $veza->exec("set names utf8");     
     
 ?>
@@ -60,13 +60,14 @@
           exit();
      }    
      foreach ($rezultat as $vijest) {   
-    
+        $tekst = substr($vijest['tekst'],0,100);
+        $tekst .= "...";
         print '<div class="novost">';
         print '<img src="'.$vijest['slika'].'" alt="Slika">';
         print '<p>'.date("d.m.Y. (h:i)",$vijest['vrijeme']).'</p>';
         print '<p>'.$vijest['autor'].'</p>';
         print '<h1 id="naslov">'.$vijest['naslov'].'</h1>';
-        print '<p id="tekst"> '.$vijest['tekst'].'  </p>';
+        print '<p id="tekst"> '.$tekst.'  </p>';
         
         if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
             print "<a href='uredinovost.php?novost=".$vijest['id']."'>Uredi </a>";

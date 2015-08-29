@@ -7,7 +7,7 @@
 ?>
 
 <?php
-    $veza = new PDO("mysql:dbname=dekordb;host=localhost;charset=utf8", "dekor", "1DvaTri!");
+    $veza = new PDO("mysql:dbname=dekordb;host=127.6.44.2;charset=utf8", "adminiXNWnnq", "t5Izi-S7gLII");
     $veza->exec("set names utf8");    
 ?>
 

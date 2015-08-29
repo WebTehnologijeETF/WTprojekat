@@ -9,15 +9,30 @@
         <script src="validacijaKontaktForme.js"></script>
         <script src="padajuciMeni.js"></script>
         <script src="singlePage.js"></script>
+          <?php
+                
+                if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+                print "<a href='adminpanel.php'>Admin panel</a>";
+                }
+            ?>
+        <div class="prijava">
+         <?php
+                        
+                          if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+                          print "<a href='index.php?sta=odjava'>Odjava</a> ";                          
+                          }
+                        else { print "<a href='login.php'>Prijava</a>"; }
+                    ?>
+        </div>
         <div id="stranica">
             <div id="zaglavlje">
-                <a href="#" onclick="return Otvori('Pocetna.php')"><img src="logo2.jpg" alt="logo"></a>
+                <a href="#" onclick="return Otvori('index.php')"><img src="logo2.jpg" alt="logo"></a>
                 <h1>d.o.o. "Dekoram"</h1>
                 <p>-Prodaja i ugradnja laminata i parketa-</p>   
             </div>
             <div id="meni">
                 <ul>
-                    <li> <a href="#" onclick="return Otvori('Pocetna.php')"> Pocetna </a> </li>
+                    <li> <a href="#" onclick="return Otvori('index.php')"> Pocetna </a> </li>
                     <li  onclick ="prikaziMeni()"   id="tipka"> Laminati <img id="strelica" src="strelica.jpg" alt="strelica"> <div id="padajuciMeni"> </div> </li>
                     <li> <a href="#" onclick="return Otvori('Parket.html')"> Parketi </a> </li>
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>

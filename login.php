@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST["btnLogin"])) {
-        $veza = new PDO("mysql:dbname=dekordb;host=localhost;charset=utf8", "dekor", "1DvaTri!");
+        $veza = new PDO("mysql:dbname=dekordb;host=127.6.44.2;charset=utf8", "adminiXNWnnq", "t5Izi-S7gLII");
         $veza->exec("set names utf8");   
         $user = $_POST['user'];
         $pass = $_POST['pass'];
@@ -53,7 +53,8 @@
                         <td><input type="password" name="pass"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="submit" value="Prijava" name="btnLogin"></td>
+                        <td><input type="submit" value="Prijava" name="btnLogin"></td> 
+                        <td><a href="#">Zaboravili ste lozinku?</a></td>
                     </tr>
                 </table>
             </form>

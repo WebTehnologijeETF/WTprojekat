@@ -23,6 +23,15 @@
                 print "<a href='adminpanel.php'>Admin panel</a>";
                 }
             ?>
+        <div class="prijava">
+         <?php
+                        
+                          if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+                          print "<a href='index.php?sta=odjava'>Odjava</a> ";                          
+                          }
+                        else { print "<a href='login.php'>Prijava</a>"; }
+                    ?>
+        </div>
         <div id="stranica">
          
 
@@ -40,13 +49,7 @@
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
                     <li> <a href="#" onclick="return Otvori('Fotogalerija.html')"> Fotogalerija </a> </li>
                     <li> <a href="Kontakt.php"> Kontakt </a> </li>
-                    <?php
-                        
-                          if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
-                          print "<li> <a href='index.php?sta=odjava'>Odjava</a> </li>";                          
-                          }
-                        else { print "<li> <a href='login.php'>Prijava</a> </li>"; }
-                    ?>
+                   
                 </ul>
             </div>
             <div id="sadrzaj">

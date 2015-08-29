@@ -19,8 +19,7 @@ body{
 }
 
 .novost {
-    margin-top: 20px;
-    height: 300px;
+    margin-top: 20px;    
     width: 605px;
     border: 2px solid black;
     background-image: url(slika1.jpg);
@@ -302,3 +301,50 @@ a:link    {color: #000; background-color:transparent; text-decoration:none}
 a:visited {color: #fdfdfc; background-color:transparent; text-decoration:none}
 a:hover   {color: #000; background-color:transparent; text-decoration:underline}
 a:active  {color: #fdfdfc; background-color:transparent; text-decoration:underline}
+
+
+#komentarPost {
+    border: 1px solid black;    
+}
+
+#komentarPost textarea {
+    width: 550px;
+    height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#tabelaKorisnika tr, th, td {
+    border: 1px solid black;    
+}
+
+#tabelaKorisnika {
+    margin: 50px;
+}
+
+#unosKorisnika {    
+    margin: 50px;
+}
+
+#adminPanel {                
+}
+
+
+#objavaNovost textarea {
+    height: 400px;
+    width: 590px;
+}
+
+#login {
+    border: solid 1px black;
+    position: fixed;
+    left: 60%;
+    top: 50%;   
+    
+    padding: 10px;
+    margin-top: -200px;    
+    margin-left: -300px;
+
+    border: 1px solid black;
+    border-radius: 15px;
+}

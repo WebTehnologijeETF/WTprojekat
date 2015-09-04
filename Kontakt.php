@@ -1,17 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> D.o.o. "Dekoram" </title>
+        <link rel="stylesheet" type="text/css" href="stilindex.css">
+    </head>
+    <body>
+        <script src="validacijaKontaktForme.js"></script>
+        <script src="padajuciMeni.js"></script>
+        <script src="singlePage.js"></script>
+        <div id="stranica">
             <div id="zaglavlje">
-                <a href="#" onclick="return Otvori('Pocetna.html')"><img src="logo2.jpg" alt="logo"></a>
+                <a href="#" onclick="return Otvori('Pocetna.php')"><img src="logo2.jpg" alt="logo"></a>
                 <h1>d.o.o. "Dekoram"</h1>
                 <p>-Prodaja i ugradnja laminata i parketa-</p>   
             </div>
             <div id="meni">
                 <ul>
-                    <li> <a href="#" onclick="return Otvori('Pocetna.html')"> O nama </a> </li>
+                    <li> <a href="#" onclick="return Otvori('Pocetna.php')"> Pocetna </a> </li>
                     <li  onclick ="prikaziMeni()"   id="tipka"> Laminati <img id="strelica" src="strelica.jpg" alt="strelica"> <div id="padajuciMeni"> </div> </li>
                     <li> <a href="#" onclick="return Otvori('Parket.html')"> Parketi </a> </li>
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
                     <li> <a href="#" onclick="return Otvori('Fotogalerija.html')"> Fotogalerija </a> </li>
-                    <li> <a href="#" onclick="return Otvori('Kontakt.html')"> Kontakt </a> </li>
+                    <li> <a href="Kontakt.php"> Kontakt </a> </li>
                 </ul>
             </div>
             <div id="sadrzaj">
@@ -25,49 +36,54 @@
                     <a href="http://www.klix.ba/"> <img src="klix.jpg" alt="klix"> </a>
                 </div>
                 <div id="sredina">
-                    <form name="kontakt" action ="validacija.php" method="post">
+                    <?php
+                      include 'Validacija.php';
+                    ?>
+                  
+                   <?php 
+                      include 'potvrda.php'
+                   ?>
+                   
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <table id="kontaktforma">
                             <tr>
                                 <td>Ime i prezime:</td>
-                                <td><input id="ime" name="Ime"></td>
-                                 <td> <input class="slikaGreske" id="greska" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaImena">Morate unijeti ime!</td>
-                               
+                                <td><input type="text" name="ime" value="<?php echo $ime;?>"></td>
+                                <td><span class="error">* <?php echo $imeErr;?></span></td>
                             </tr>
                             <tr>
                                 <td>E mail:</td>
-                                <td><input id="email" name="eMail"></td>
-                                <td> <input class="slikaGreske"  id="grMail" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaMaila">Morate unijeti validan e-mail!</td>
+                                <td><input type="text" name="email" value="<?php echo $email;?>"></td>
+                                <td><span class="error">* <?php echo $emailErr;?></span></td>    
                             </tr>
                             <tr>
                                 <td>Maticni broj:</td>
-                                <td><input id="maticni" name="maticni broj"></td>
-                                 <td> <input class="slikaGreske"  id="grMaticni" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaJMBG">Maticni broj nije validan!</td>
+                                <td><input type="text" name="maticni" value="<?php echo $maticni;?>"></td>
+                                <td><span class="error">* <?php echo $maticniErr;?></span></td>             
                             </tr>
                              <tr>
-                                <td>Mjesto</td>
-                                <td><input id="mjesto" name="mjesto"></td>
+                                <td>Mjesto:</td>
+                                 <td><input type="text" id="mjesto" name="mjesto" value="<?php echo $mjesto;?>"></td>
                             </tr>
                              <tr>
-                                <td>Opcina</td>
-                                <td><input id="opcina" name="opcina"></td>
-                                 <td> <input class="slikaGreske"  id="grOpcina" type="image" src="greska.png" alt="greska"></td>
-                                <td id="greskaOpcina">Opcina ili mjesto ne postoji ili mjesto nije u navedenoj opcini!</td>
+                                <td>Opcina:</td>
+                                 <td><input type="text" id="opcina" name="opcina" value="<?php echo $opcina;?>"></td>
+                                
                             </tr>
                             <tr>
                                 <td>Naslov:</td>
-                                <td><input name="naslov"></td>
+                                <td><input type="text" name="naslov" value="<?php echo $naslov;?>"></td>
                             </tr>
                             <tr>
                                 <td id="por">Poruka:</td>
-                                <td><input class="poruka" name="poruka"></td>
+                                <td><input type="text" name="poruka" value="<?php echo $poruka;?>"></td>
                             </tr>
                             <tr>
                                 <td> </td>
                                 <td id="posalji">
-                                    <button type="button" onclick="validForme()">Posalji</button>
+                                    <input type="reset" name="reset" value="Ponisti">
+                                    <input type="submit" name="submit" value="Posalji" onclick="provjeraMjestaIOpcine()">
+                                    
                                 </td>
                             </tr>
                         </table>
@@ -76,4 +92,6 @@
                 <div id="desno">
                 </div>
             </div>
-     
+        </div>      
+    </body>
+</html> 

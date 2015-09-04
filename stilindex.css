@@ -13,6 +13,12 @@ body{
 #padajuciMeni {
     position: absolute;
 }
+#greskaOpcina {
+    visibility: hidden;
+}
+#greskaMjesto {
+    visibility: hidden;
+}
 #zaglavlje{
     height: 150px;
     width: 1030px;

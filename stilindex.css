@@ -13,43 +13,6 @@ body{
 #padajuciMeni {
     position: absolute;
 }
-#naslov {
-    font-size: large;
-    color: blue;
-}
-
-.novost {
-    margin-top: 20px;    
-    width: 605px;
-    border: 2px solid black;
-    background-image: url(slika1.jpg);
-    border-left: 0px;
-    border-right: 0px;
-}
-.novost a{
-    float: right;
-    margin-right: 10px;
-}
-.novost p,h{
-    
-    margin-left: 4px;
-  
-}
-.novost img {
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 0px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-}
-#greskaOpcina {
-    visibility: hidden;
-}
-.error {color: #FF0000;}
-#greskaMjesto {
-    visibility: hidden;
-}
 #zaglavlje{
     height: 150px;
     width: 1030px;
@@ -109,17 +72,15 @@ body{
     border-top: 2px solid black;
     background-color:#808080;
     width: 1030px;
-    height: max-content;
+    height: 696px;
 
 }
 
 #lijevo{
     float: left;
     background-image: url(slika2.jpg);
-    height: 1100px;
+    height: 694px;
     width: 214px;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
 }
 
 #lijevo h3{
@@ -138,9 +99,9 @@ body{
 
 #sredina{
 
-    height: max-content;
-    width:  603px;
-    background-color: #df9595;
+    height: 694px;
+    width:  607px;
+    background-color: #808080;
     float: left;
 }
 #sredina h3{
@@ -150,12 +111,10 @@ body{
 #kalup{
   
     height: 200px;
-    width:  605px;
+    width:  609px;
     background-image: url(slika1.jpg);
     float: left;
-    border-bottom: 2px solid black;
 }
-
 #galerija img{   
     width:  609px;
     height: 400px;
@@ -182,13 +141,12 @@ body{
     color: red;
 }
 #desno{
-    border-left: 2px solid black;
-    height: 1100px;
+    
+    height: 694px;
     width: 207px;
     background-image:url(slika2.jpg);
     margin: auto;
     float: left;
-    border-bottom: 2px solid black;
 }
 #desno h3{
     text-align: center;
@@ -274,86 +232,8 @@ body{
     margin-left: 56px;
     background-image: url(slika2.jpg);
 }
-#podnaslov {
-    color: red;
-}
-#siguran {
-    margin-left: 400px;
-}
-#potvrda {
-    background-color: #f57d24;
-    margin-left: 56px;
-    margin-top: 20px;
-    border: 2px solid black;
-    width: 500px;
-    height: 400px;
-}
-#potvrda h {
-    margin: auto;
-    color: blue;
-    font-size: large;
-}
-#potvrda tr,td {
-    margin: 0px;
-}
 
 a:link    {color: #000; background-color:transparent; text-decoration:none}
 a:visited {color: #fdfdfc; background-color:transparent; text-decoration:none}
 a:hover   {color: #000; background-color:transparent; text-decoration:underline}
 a:active  {color: #fdfdfc; background-color:transparent; text-decoration:underline}
-
-
-#komentarPost {
-    border: 1px solid black;    
-}
-
-#komentarPost textarea {
-    width: 550px;
-    height: 50px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-#tabelaKorisnika tr, th, td {
-    border: 1px solid black;    
-}
-
-#tabelaKorisnika {
-    margin: 50px;
-}
-
-#unosKorisnika {    
-    margin: 50px;
-}
-
-#adminPanel {                
-}
-
-
-#objavaNovost textarea {
-    height: 400px;
-    width: 590px;
-}
-
-#login {
-    border: solid 1px black;
-    position: fixed;
-    left: 60%;
-    top: 50%;   
-    
-    padding: 10px;
-    margin-top: -200px;    
-    margin-left: -300px;
-
-    border: 1px solid black;
-    border-radius: 15px;
-}
-
-
-.prijava {
-    text-align: right;
-    border-radius: 20px;
-    border: 1px solid black;
-    float: right;
-    padding: 10px;
-}

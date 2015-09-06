@@ -7,7 +7,7 @@
             <div id="meni">
                 <ul>
                     <li> <a href="#" onclick="return Otvori('Pocetna.php')"> Pocetna </a> </li>
-                    <li  onclick ="prikaziMeni()"   id="tipka"> Laminati <img id="strelica" src="strelica.jpg" alt="strelica"> <div id="padajuciMeni"> </div> </li>
+                    <li  onclick ="prikaziMeni()" id="tipka"> Laminati <img id="strelica" src="strelica.jpg" alt="strelica"> <div id="padajuciMeni"> </div> </li>
                     <li> <a href="#" onclick="return Otvori('Parket.html')"> Parketi </a> </li>
                     <li> <a href="#" onclick="return Otvori('Cjenovnik.html')"> Cjenovnik </a> </li>
                     <li> <a href="#" onclick="return Otvori('Fotogalerija.html')"> Fotogalerija </a> </li>

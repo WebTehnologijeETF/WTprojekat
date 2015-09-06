@@ -1,54 +1,81 @@
+<?php    
+    session_start();    
+
+    $veza = new PDO("mysql:dbname=dekordb;host=127.6.44.2;charset=utf8", "adminiXNWnnq", "t5Izi-S7gLII");   
+    $veza->exec("set names utf8");     
+    
+?>
+
 <?php
- 
-   echo '<h3> Novosti </h3>';
-   $brojac = 0;
-  foreach (glob("Novosti/*.txt") as $file) {
-          $brojac++; 
-          $file = test_input($file);
-          $handle = fopen($file, "r");
-          if ($handle) 
-          {
-                      $datum = fgets($handle, 1024); $datum = test_input($datum);
-                      $autor = fgets($handle, 1024); $autor = test_input($autor);
-                      $naslov = fgets($handle, 1024); $naslov = test_input($naslov);
-                      $slika = fgets($handle, 1024); $slika = test_input($slika);
-                      $tekst = "";
-                      $pomocna = fgets($handle, 1024); $pomocna = test_input($pomocna);
-                      while($pomocna !== '--'){
-                          $tekst .= $pomocna;
-                          $pomocna = fgets($handle, 1024); $pomocna = test_input($pomocna);
-                      }
-                      $pomocna = fgets($handle, 1024); $pomocna = test_input($pomocna);
-                      $detaljnije = "";
-                      while($pomocna !== '')
-                      {
-                          $detaljnije .= $pomocna;
-                          $pomocna = fgets($handle, 1024); $pomocna = test_input($pomocna);
-                      }
-                      $objavi = '<div class="novost">';
-                      $slika = trim($slika);
-                      if($slika != "")
-                      {
-                          $objavi .= '<img  src="'.$slika.'" alt="slika">';
-                      }
-                      $objavi .= '<p>'.$datum.'</p>';
-                      $objavi .= '<p>'.$autor.'</p>';
-                      $objavi .= '<h id = "naslov">'.$naslov.'</h>';
-                      if($detaljnije != '')
-                      { 
-                        $objavi .= '<p id="tekst">'.$tekst.'</p>';                     
-                        $objavi .= '<a class="detaljnije">Detaljnije</a>';
-                      }  
-                      else
-                      $objavi .= '<p id="tekst">'.$tekst.'</p>';     
-                      $objavi .= '</div>';
-                      echo $objavi;
-           }
-  }
-  function test_input($data) {
-                       $data = trim($data);
-                      $data = stripslashes($data);
-                      $data = htmlspecialchars($data);
-                       return $data;
-                    }
+    //objavljivajne novosti (unošene u bazu)
+    if(isset($_POST['btnObjaviNovost'])) {                                                    
+        $rezultat = $veza->prepare("insert into novost(naslov, tekst, autor, slika) values(?,?,?,?)");
+        $rezultat->execute(array($_POST["naslov"],$_POST["tekst"], $_SESSION['username'], $_POST["slika"]));               
+       if (!$rezultat) {
+            $greska = $veza->errorInfo();
+            print "SQL greška: " . $greska[2];
+            exit();
+        }
+        header("Location: index.php"); /* Redirect browser */
+        exit();    
+    }    
+    
+    //brisanje novosti iz baze 
+    if(isset($_REQUEST['sta']) && $_REQUEST['sta'] == 'obrisi' && isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {                                                    
+        $rezultat = $veza->prepare("delete from novost where id = ?");
+        $rezultat->execute(array($_REQUEST["novost"]));        
+        if (!$rezultat) {
+            $greska = $veza->errorInfo();
+            print "SQL greška: " . $greska[2];
+            exit();
+        }
+        header("Location: index.php"); 
+        exit();  
+    }    
+
+?>
+
+<?php
+     if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+?>
+<h3>Objavi novost</h3>
+<div id="objavaNovost">
+    <form action="novosti.php" method="post">
+        <table>
+            <tr><td><p>Naslov:</p></td><td><input name="naslov"></td></tr>
+            <tr><td><p>Slika:</p></td> <td><input name="slika"></td></tr>
+        </table>
+        <p>Tekst</p> <textarea name="tekst"></textarea>
+        <input type="submit" name="btnObjaviNovost" value="Objavi">
+    </form>
+</div>
+
+<?php   
+     }          
+    $rezultat = $veza->query("select id, naslov, tekst, UNIX_TIMESTAMP(vrijeme) vrijeme, autor, slika from novost order by vrijeme desc");
+     
+     if (!$rezultat) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
+     }    
+     foreach ($rezultat as $vijest) {   
+        $tekst = substr($vijest['tekst'],0,100);
+        $tekst .= "...";
+        print '<div class="novost">';
+        print '<img src="'.$vijest['slika'].'" alt="Slika">';
+        print '<p>'.date("d.m.Y. (h:i)",$vijest['vrijeme']).'</p>';
+        print '<p>'.$vijest['autor'].'</p>';
+        print '<h1 id="naslov">'.$vijest['naslov'].'</h1>';
+        print '<p id="tekst"> '.$tekst.'  </p>';
+        
+        if(isset($_SESSION['username']) && $_SESSION['tip'] == 'Admin') {
+            print "<a href='uredinovost.php?novost=".$vijest['id']."'>Uredi </a>";
+            print "<a href='novosti.php?sta=obrisi&novost=".$vijest['id']."'>Obriši </a>";
+        }
+
+        print '<a href="novost.php?novost='.$vijest['id'].'">Detaljnije</a>'; 
+        print '</div>';       
+     }
+    
 ?>
